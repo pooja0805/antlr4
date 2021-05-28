@@ -19,8 +19,9 @@ stages:
 matrix:
   include:
     - os: linux
-      arch: s390x
+    - arch: s390x
       dist: xenial
+      dist: bionic
       compiler: clang
       env:
        - TARGET=swift
