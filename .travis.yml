@@ -19,13 +19,25 @@ stages:
 matrix:
   include:
     - os: linux
-    - arch: s390x
-      dist: bionic
+      dist: xenial
       compiler: clang
       env:
        - TARGET=swift
        - GROUP=ALL
       stage: extended-test
+    - os: linux
+      arch: s390x
+      dist: bionic
+      compiler: clang
+      addons:
+        apt:
+          packages:
+          - clang-3.6
+      env:
+       - TARGET=swift
+       - GROUP=ALL
+      stage: extended-test
+
 
 before_install:
   - f="./.travis/before-install-$TRAVIS_OS_NAME-$TARGET.sh"; ! [ -x "$f" ] || "$f"
