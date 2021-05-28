@@ -19,8 +19,6 @@ stages:
 matrix:
   include:
     - os: linux
-    - arch: s390x
-      dist: bionic
       dist: xenial
       compiler: clang
       env:
