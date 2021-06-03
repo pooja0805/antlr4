@@ -4,6 +4,8 @@ language: java
 
 before_cache:
   - rm -rf $HOME/.m2/repository/org/antlr
+  - sudo apt-get -y install clang-6.0
+  - sudo update-alternatives --install /usr/bin/clang clang /usr/bin/clang-6.0 100
 cache:
   timeout: 600
   directories:
@@ -33,7 +35,7 @@ matrix:
         apt:
           update: true
           packages: 
-          - clang
+          - clang-6.0
       env:
        - TARGET=swift
        - GROUP=ALL
