@@ -27,13 +27,8 @@ matrix:
       stage: extended-test
     - os: linux
       arch: s390x
-      dist: bionic
+      dist: xenial
       compiler: clang
-      addons:
-        apt:
-          update: true
-          packages: 
-          - clang-6.0
       env:
        - TARGET=swift
        - GROUP=ALL
@@ -41,7 +36,6 @@ matrix:
 
 
 before_install:
-  - if [ "${CC}" == 'clang' ]; then sudo update-alternatives --install /usr/bin/clang clang /usr/bin/clang-6.0 100 && sudo update-alternatives --config clang; fi
   - f="./.travis/before-install-$TRAVIS_OS_NAME-$TARGET.sh"; ! [ -x "$f" ] || "$f"
 
 script:
