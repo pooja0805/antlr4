@@ -29,6 +29,11 @@ matrix:
       arch: s390x
       dist: xenial
       compiler: clang
+      addons:
+        apt:
+          update: true
+          packages: 
+          - maven
       env:
        - TARGET=swift
        - GROUP=ALL
