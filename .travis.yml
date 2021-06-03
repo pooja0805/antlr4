@@ -34,7 +34,6 @@ matrix:
           update: true
           packages: 
           - maven
-          - swift-linux-s390x
       env:
        - TARGET=swift
        - GROUP=ALL
