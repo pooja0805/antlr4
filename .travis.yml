@@ -27,15 +27,14 @@ matrix:
       stage: extended-test
     - os: linux
       arch: s390x
-      dist: xenial
-      compiler: clang
+      dist: bionic
       addons:
         apt:
           update: true
           packages: 
           - maven
       env:
-       - TARGET=swift
+       - TARGET=java
        - GROUP=ALL
       stage: extended-test
 
