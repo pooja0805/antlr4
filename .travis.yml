@@ -33,7 +33,7 @@ matrix:
         apt:
           update: true
           packages: 
-          - clang-6.0
+          - clang
       env:
        - TARGET=swift
        - GROUP=ALL
